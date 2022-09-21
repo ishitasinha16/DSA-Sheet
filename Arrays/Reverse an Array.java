@@ -1,65 +1,31 @@
-// { Driver Code Starts
-//Initial Template for Java
-
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class GFG {
-	public static void main(String[] args) throws IOException
-	{
-	        BufferedReader br =
-            new BufferedReader(new InputStreamReader(System.in));
-        int t =
-            Integer.parseInt(br.readLine().trim()); // Inputting the testcases
-        while(t-->0)
-        {
-            int n = Integer.parseInt(br.readLine().trim());
-            int a[] = new int[(int)(n)];
-            String inputLine[] = br.readLine().trim().split(" ");
-            for (int i = 0; i < n; i++) {
-                a[i] = Integer.parseInt(inputLine[i]);
-            }
-            
-            Solution obj = new Solution();
-            obj.segregateElements(a, n);
-            
-            for(int i=0;i<n;i++)
-            System.out.print(a[i]+" ");
-            
-            System.out.println();
-        }
-	}
-}
-// } Driver Code Ends
-
-
-//User function Template for Java
-
-class Solution {
-    
-    public void segregateElements(int arr[], int n)
-    {
-        // Your code goes here
-        int temp[]=new int[n];
-        int j=0;
-         for (int i = 0; i < n; i++)
-            if (arr[i] >= 0)
-                temp[j++] = arr[i];
-       
-         if (j == n || j == 0)
-            return;
-             for(int i=0;i<n;i++){
-            if(arr[i]<=0){
-            temp[j++]=arr[i];
-            }
-        }
-            
-           
+class reverse {
  
-        for(int i=0;i<n;i++)
-        {
-            arr[i]=temp[i];
-        }
-    }
+public static void main (String[] args) {
+  Scanner sc = new Scanner(System.in); 
+  
+  
+   int T = sc.nextInt(); 
+   
+    while (T-->0){
+        
+       int N = sc.nextInt(); 
+       int[] arr= new int[N];
+       
+       for(int i=0; i<N; i++){
+           arr[i]=sc.nextInt();
+       }
+    
+       for(int i=N-1; i>=0; i--){
+           System.out.print(arr[i]+" ");
+       }
+       
+       System.out.println();
+
+   }
+   
+}
 }
